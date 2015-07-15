@@ -21,26 +21,13 @@ class RorTask1
   # Дан целочисленный массив. Необходимо вывести вначале его элементы с четными
   # индексами, а затем - с нечетными.
   def even_odd_elements(arr)
-    even = []
-    (0...arr.size).step(2) do |i|
-      even << arr[i]
-    end
-    odd = []
-    (1...arr.size).step(2) do |i|
-      odd << arr[i]
-    end
-    even + odd
+    arr.partition.with_index { |obj, i| i.odd? }.flatten
   end
 
   # Дан целочисленный массив. Преобразовать его, прибавив к нечетным числам последний
   # элемент. Первый и последний элементы массива не изменять.
   def even_elements_addition(arr)
-    result = []
-    result << arr.first
-    1.upto(arr.size - 2) do |i|
-      result << ((arr[i].odd?) ? arr[i] + arr.last : arr[i])
-    end
-    result << arr.last
+    arr.map.with_index { |obj, i| ((1...arr.size - 1).include?(i) && obj.odd?) ? obj + arr[-1] : obj }
   end
 
   # Дан целочисленный массив, содержащий по крайней мере два нуля. Вывести сумму чисел

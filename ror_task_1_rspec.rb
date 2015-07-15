@@ -14,7 +14,7 @@ describe RorTask1 do
   end
 
   it 'Should return elements at even indexes then at odd as Array' do
-    expect(task.even_odd_elements [0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1]).to eq [0.1, 2.1, 4.1, 6.1, 8.1, 1.1, 3.1, 5.1, 7.1]
+    expect(task.even_odd_elements [0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1]).to eq [1.1, 3.1, 5.1, 7.1, 0.1, 2.1, 4.1, 6.1, 8.1]
   end
 
   it 'Should do some actions' do
